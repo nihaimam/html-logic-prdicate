@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--Elizabeth Tracy-->
+
+<html>
+	<head>
+		<title>Beth's Form</title>
+		<script>
+			<!--Reminder button control on click-->
+			function Reminder() {
+				alert("You can't eat your cake and eat it too");
+			}
+		</script>
+
+	</head>
+	<body>
+		<form method="post" action="https://cs.gmu.edu:8443/offutt/servlet/formHandler">
+			<table border=3 style="background-color:yellow">
+				<tr><td>
+				<table align="center" style="padding:10px">
+					<tr>
+						<h2 align="center"><b>Cake?<b></h2>
+					<tr>
+						<td>Do you want to have cake?
+						<td><input type="radio" name="Cake" id="yes" value="yes"/>
+						<label for="yes">yes</label>
+						<td><input type="radio" name="Cake" id="no" value="no"/>
+						<label for="no">no</label>
+					</tr>
+					<tr>
+						<td>Do you want to eat it?
+						<td><input type="radio" name="Eat" id="yes" value="yes"/>
+						<label for="yes">yes</label>
+						<td><input type="radio" name="Eat" id="no" value="no"/>
+						<label for="no">no</label>
+					</tr>
+					<tr>
+						<td><input type="button" name="reminder" value="REMINDER" onClick="Reminder()">
+					</tr>
+				</table>
+				<table align="center" style="padding:10px">
+					<tr>
+						<td><input type="submit" name="Operation" value="AND">
+						<td><input type="submit" name="Operation" value="OR">
+					</tr>
+				</table>
+			</table>
+		</form>
+	</body>
+</html>
