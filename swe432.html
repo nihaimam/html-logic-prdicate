@@ -1,0 +1,94 @@
+<head>
+	<link rel='icon' href='elee.ico' type='elee.ico'/>
+	<head>
+		<style>
+			body {
+				background-color: #EFD4CF;
+				font-family: sans-serif;
+			}
+			img {
+			}
+			hr {
+				top: 10%;
+				border: none;
+				background-color: white;
+			}
+			h1{
+				color: black;
+				text-align: center;
+				top: 3%;
+			}
+			box {
+				float: left;
+				width: 400px;
+				background-color: rgba(255, 0, 0, 0.2);
+				overflow:hidden;
+    				padding: 50px;
+    				margin-left: 30%;
+    				margin-top: 3%;
+    				color: black;
+				box-shadow: 0 0 2px 2px white inset;
+			}
+		</style>
+	</head>
+	<body>
+		<h1> SWE 432 </h1>
+		<hr/>
+		<box>
+			<p><strong> Function 1 </strong></p>
+			<p> don't click the button ! for the love of jesus ! </p>
+			<form>
+				<input type="button" value="click here for a surpurise ! :)"
+				onClick="alert('the disrespect!');
+					alert('the audacity!');
+					alert('the caucasity!');
+					alert('is you dumb? :O')"/>
+			</form>
+			<br>
+			<p><strong> Function 2 </strong></p>
+			<p> move mouse over the emoji to make it bigger :) </p>
+			<img onmouseover = "big(this)" onmouseout = "small(this)" border = "0"
+			     src = "http://clipart-library.com/images/6Tr5bBo8c.png"
+			     alt = "smile" width = "32" height = "32">
+			<br><br>
+			<p><strong> Predicate Logic </strong></p>
+			<p> this takes in two values and does AND or OR on them </p>
+			<form method="post" action="https://cs.gmu.edu:8443/offutt/servlet/formHandler">
+				<label> enter two predicates: </label><br>
+				<input id = "one" type = "text" name = "predicate-one" /><br>
+				<input id = "two" type = "text" name = "predicate-two" /><br>
+				<input id = "three" type="radio" name = "option-one" value = "and"/> <label for = "three"> AND </label>
+				<input id = "four" type="radio" name = "option-two" value = "or"/> <label for = "four"> OR </label><br><br>
+				<input type = "submit" onClick = "submit()" value = "Evaluate">
+			</form>
+			<br>
+			<p><strong> Contributions </strong></p>
+			<ul>
+				<li> Niha </li>
+				<li> Tori </li>
+				<li> Beth </li>
+			</ul>
+			<p> insert contribution summary here </p>
+
+		</box>
+
+	<script>
+		function big(x) {
+			x.style.height = "64px";
+			x.style.width = "64px";
+		}
+
+		function small(x) {
+			x.style.height = "32px";
+  			x.style.width = "32px";
+		}
+
+	</script>
+
+	</body>
+</html>
+
+
+
+
+
