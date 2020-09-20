@@ -1,0 +1,85 @@
+<html>
+	<head>
+	<title> Tori's Broadnax's Page </title>
+	<style>
+	body {
+		background-color: #FFEEFE;
+		text-align: center;
+		font-family: georgia;
+	}
+	h1 {
+		color: #B532C0;
+		font-style: italic;
+	}
+	p {
+		font-family: georgia;
+		font-size: 20px;
+	}
+
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 500px;
+		height: 500px;
+		
+
+	</style>
+
+	<script>
+
+		var count = 0;
+
+		function addCount()
+		{
+			count = count + 1;
+		}
+
+		function resetCount()
+		{
+			count = -1;
+		}
+
+		function SetImg ()
+		{
+			
+			addCount();
+			if(count == 0)
+			{
+				document.getElementById("image").src="images/pumpkin.gif";
+			}
+
+			if(count == 1)
+			{
+				document.getElementById("image").src="images/totoro.gif";	
+			}
+
+			if(count == 2)
+			{
+				document.getElementById("image").src="images/spiritedAway.gif";
+			}
+			
+			if(count == 3)
+			{
+				document.getElementById("image").src="images/flowerDog.gif";
+			}
+			
+			if(count == 4)
+			{
+				resetCount();
+				document.getElementById("image").src="images/kermit.jpg";
+			}
+			
+		}
+	</script>
+	</head>
+
+	<body>
+		<h1> Tori Broadnax's Web Page </h1>
+		<hr>
+		<p>Click the button to see some of my favorite images! :)</p>
+		<p><input type="button" value="Click me!" onClick="SetImg()"></p>
+		<img id="image" src="images/pumpkin.gif">
+	</body>
+
+</html>
