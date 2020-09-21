@@ -1,12 +1,56 @@
 <head>
 	<link rel='icon' href='elee.ico' type='elee.ico'/>
 	<head>
+	<script>
+		<!--Reminder button control on click-->
+		function Reminder() {
+			alert("You can't have your cake and eat it too");
+		}
+
+                function big(x) {
+                        x.style.height = "128px";
+                        x.style.width = "128px";
+                }
+
+                function small(x) {
+                        x.style.height = "64px";
+                        x.style.width = "64px";
+                }
+
+		var count = 0;
+		function addCount() {
+			count  = count + 1;
+		}
+		
+		function resetCount() {
+			count = -1;
+		}
+		
+		function setImg() {
+			addCount();
+			if (count == 0){
+				document.getElementById("image").src="images/pumpkin.gif";
+			}
+			if (count == 1){
+				document.getElementById("image").src="images/totoro.gif";
+			}
+			if (count == 2){
+				document.getElementById("image").src="images/spiritedAway.gif";
+			}
+			if (count == 3){
+				document.getElementById("image").src="images/flowerDog.gif";
+			}
+			if (count == 4){
+				resetCount();
+				document.getElementById("image").src="images/kermit.jpg";
+			}
+		}
+
+	</script>
 		<style>
 			body {
 				background-color: #EFD4CF;
 				font-family: sans-serif;
-			}
-			img {
 			}
 			hr {
 				top: 10%;
@@ -17,6 +61,11 @@
 				color: black;
 				text-align: center;
 				top: 3%;
+			}
+			img{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
 			}
 			box {
 				float: left;
@@ -33,33 +82,54 @@
 	</head>
 	<body>
 		<h1> SWE 432 </h1>
-		<hr/>
+		
 		<box>
-			<p><strong> Function 1 </strong></p>
-			<p> don't click the button ! for the love of jesus ! </p>
-			<form>
-				<input type="button" value="click here for a surpurise ! :)"
-				onClick="alert('the disrespect!');
-					alert('the audacity!');
-					alert('the caucasity!');
-					alert('is you dumb? :O')"/>
-			</form>
+			<p><strong> Event Handler 1 </strong></p>
+			<p> Click the button to see some of Tori's favorite images! :) </p>
+			<p> <input type="button" value="Click me!" onClick="setImg()"> </p>
+			<img id="image" src="images/pumpkin.gif" width = 300px height = 300px>
 			<br>
-			<p><strong> Function 2 </strong></p>
-			<p> move mouse over the emoji to make it bigger :) </p>
+			<p><strong> Event Handler 2 </strong></p>
+			<p> Move mouse over the emoji to make it bigger :) </p>
 			<img onmouseover = "big(this)" onmouseout = "small(this)" border = "0"
 			     src = "http://clipart-library.com/images/6Tr5bBo8c.png"
-			     alt = "smile" width = "32" height = "32">
-			<br><br>
+			     alt = "smile" width = "64" height = "64">
+			<br>
 			<p><strong> Predicate Logic </strong></p>
-			<p> this takes in two values and does AND or OR on them </p>
+			<p> User can choose whether they want to have cake and/or eat it. </p>
+			<p> Using the radio buttons they will choose what combination of eating & having their cake they want, and will then chose whether they want to treat it as an and or as an or. </p>
+			<p> The result will eventually be built to tell them they can't have their cake and eat it too. </p>
 			<form method="post" action="https://cs.gmu.edu:8443/offutt/servlet/formHandler">
-				<label> enter two predicates: </label><br>
-				<input id = "one" type = "text" name = "predicate-one" /><br>
-				<input id = "two" type = "text" name = "predicate-two" /><br>
-				<input id = "three" type="radio" name = "option-one" value = "and"/> <label for = "three"> AND </label>
-				<input id = "four" type="radio" name = "option-two" value = "or"/> <label for = "four"> OR </label><br><br>
-				<input type = "submit" onClick = "submit()" value = "Evaluate">
+				<table border=3 style="background-color:#EFD4CF">
+					<tr><td>
+					<table align="center" style="padding:10px">
+						<tr>
+							<h2 align="center"><b>Cake?<b></h2>
+						<tr>
+							<td>Do you want to have cake?
+							<td><input type="radio" name="Cake" id="yes" value="yes"/>
+							<label for="yes">yes</label>
+							<td><input type="radio" name="Cake" id="no" value="no"/>
+							<label for="no">no</label>
+						</tr>
+						<tr>
+							<td>Do you want to eat it?
+							<td><input type="radio" name="Eat" id="yes" value="yes"/>
+							<label for="yes">yes</label>
+							<td><input type="radio" name="Eat" id="no" value="no"/>
+							<label for="no">no</label>
+						</tr>
+						<tr>
+							<td><input type="button" name="reminder" value="REMINDER" onClick="Reminder()">
+						</tr>
+					</table>
+					<table align="center" style="padding:10px">
+						<tr>
+							<td><input type="submit" name="Operation" value="AND">
+							<td><input type="submit" name="Operation" value="OR">
+						</tr>
+					</table>
+				</table>
 			</form>
 			<br>
 			<p><strong> Contributions </strong></p>
@@ -68,22 +138,9 @@
 				<li> Tori </li>
 				<li> Beth </li>
 			</ul>
-			<p> insert contribution summary here </p>
+			<p> We all decided it would be best to create our own take of the predicate form and the event handlers and then we will come together to integrate it all into one file. Beth's predicate syntax and form was the best so we chose that, Tori's event handler picture change was impressive so we added that too. Niha's on mouse over event of making the picture bigger was also selected. After we all had made our own designs, Niha combined them all on a single page. </p>
 
 		</box>
-
-	<script>
-		function big(x) {
-			x.style.height = "64px";
-			x.style.width = "64px";
-		}
-
-		function small(x) {
-			x.style.height = "32px";
-  			x.style.width = "32px";
-		}
-
-	</script>
 
 	</body>
 </html>
